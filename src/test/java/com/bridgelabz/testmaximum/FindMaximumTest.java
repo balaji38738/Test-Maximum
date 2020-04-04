@@ -128,4 +128,23 @@ public class FindMaximumTest {
         String maximum = maxOfThree.findMaximum();
         Assert.assertEquals("Peach", maximum);
     }
+
+    @Test
+    public void givenAnyNumberOfIntegers_shouldReturnMaximum() {
+        Integer maximum = FindMaximum.findMaximum(3, 4, 7, 1, 9);
+        Assert.assertEquals((Integer)9, maximum);
+    }
+
+    @Test
+    public void givenAnyNumberOfFloats_shouldReturnMaximum() {
+        Float maximum = FindMaximum.findMaximum(3.14f, 1.6f, 2.738f, 9.8f, 9.8f);
+        boolean isEqual = maximum == 9.8f;
+        Assert.assertTrue(isEqual);
+    }
+
+    @Test
+    public void givenAnyNumberOfStrings_shouldReturnMaximum() {
+        String maximum = FindMaximum.findMaximum("apple", "peach", "pineapple", "cherry");
+        Assert.assertEquals("pineapple", maximum);
+    }
 }

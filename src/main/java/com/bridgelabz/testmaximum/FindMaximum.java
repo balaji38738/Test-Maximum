@@ -27,7 +27,12 @@ public class FindMaximum<T extends Comparable<T>>{
             }
             parameters[hole] = value;
         }
+        printMax(parameters[0]);
         return parameters[0];
+    }
+
+    private static <T extends Comparable<T>> void printMax(T maximum) {
+        System.out.println(maximum);
     }
 
     public T findMaximum() {
