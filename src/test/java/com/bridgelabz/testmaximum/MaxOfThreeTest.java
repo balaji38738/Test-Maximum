@@ -35,7 +35,7 @@ public class MaxOfThreeTest {
     }
 
     @Test
-    public void givenThreeFloat_whenMaxAtSecond_shouldReturnTheSame() {
+    public void givenThreeFloats_whenMaxAtSecond_shouldReturnTheSame() {
         MaxOfThree maxOfThree = new MaxOfThree(1.6f, 9.8f, 6.14f);
         float maximum = maxOfThree.findMaxOfThreeFloats();
         boolean isEqual = maximum == 9.8f;
@@ -43,10 +43,32 @@ public class MaxOfThreeTest {
     }
 
     @Test
-    public void givenThreeFloat_whenMaxAtThird_shouldReturnTheSame() {
+    public void givenThreeFloats_whenMaxAtThird_shouldReturnTheSame() {
         MaxOfThree maxOfThree = new MaxOfThree(1.6f, 9.8f, 9.8f);
         float maximum = maxOfThree.findMaxOfThreeFloats();
         boolean isEqual = maximum == 9.8f;
         Assert.assertTrue(isEqual);
     }
+
+    @Test
+    public void givenThreeStrings_whenMaxAtFirst_shouldReturnTheSame() {
+        MaxOfThree maxOfThree = new MaxOfThree("Peach", "Apple", "Banana");
+        String maximum = maxOfThree.findMaxOfThreeStrings();
+        Assert.assertEquals("Peach", maximum);
+    }
+
+    @Test
+    public void givenThreeStrings_whenMaxAtSecond_shouldReturnTheSame() {
+        MaxOfThree maxOfThree = new MaxOfThree("Apple", "Peach", "Banana");
+        String maximum = maxOfThree.findMaxOfThreeStrings();
+        Assert.assertEquals("Peach", maximum);
+    }
+
+    @Test
+    public void givenThreeStrings_whenMaxAtThird_shouldReturnTheSame() {
+        MaxOfThree maxOfThree = new MaxOfThree("Apple", "Banana", "Peach");
+        String maximum = maxOfThree.findMaxOfThreeStrings();
+        Assert.assertEquals("Peach", maximum);
+    }
+
 }
